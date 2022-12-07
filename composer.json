@@ -18,5 +18,8 @@
             "de-DE": "Beschreibung in der Administration für das Plugin",
             "en-GB": "Description in the administration for this plugin"
         }
+    },
+    "require": {
+        "promphp/prometheus_client_php": "^2.6"
     }
 }
