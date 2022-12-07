@@ -1,0 +1,20 @@
+{% sw_extends '@Storefront/storefront/base.html.twig' %}
+
+
+{% block base_content %}
+
+    Hi {{ name }}!
+
+{#    {{ dump(request) }}#}
+    {{ dump(context) }}
+
+
+    {% for product in products %}
+        <h1>{{ product.productNumber }}</h1>
+    {#    {{ dump(product) }}#}
+    {% endfor %}
+
+
+    <div data-ajax-plugin></div>
+
+{% endblock %}

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>#McxBasicExample# Settings</title>
+        <title lang="de-DE">#McxBasicExample# Einstellungen</title>
+
+        <input-field type="bool">
+            <name>active</name>
+            <label>Active</label>
+            <label lang="de-DE">Aktiviert</label>
+        </input-field>
+
+        <input-field type="checkbox">
+            <name>example</name>
+            <label>Example Field</label>
+            <label lang="de-DE">Beispielfeld</label>
+        </input-field>
+
+        <input-field type="colorpicker">
+            <name>example2</name>
+            <label>Example Field2</label>
+        </input-field>
+
+        <input-field type="date">
+            <name>example3</name>
+            <label>Example Field3</label>
+        </input-field>
+        <input-field type="datetime">
+            <name>example4</name>
+            <label>Example Field4</label>
+        </input-field>
+        <input-field type="float">
+            <name>example5</name>
+            <label>Example Float</label>
+        </input-field>
+        <input-field type="int">
+            <name>example6</name>
+            <label>Example Int</label>
+        </input-field>
+        <input-field type="multi-select">
+            <name>example7</name>
+            <label>Example Field7</label>
+            <options>
+                <option>
+                    <id>SALT</id>
+                    <name>Salt</name>
+                </option>
+                <option>
+                    <id>PEPPER</id>
+                    <name>Pepper</name>
+                </option>
+            </options>
+        </input-field>
+        <input-field type="single-select">
+            <name>example8</name>
+            <label>Example Field8</label>
+            <options>
+                <option>
+                    <id>XL</id>
+                    <name>Extra large</name>
+                </option>
+                <option>
+                    <id>XXL</id>
+                    <name>Extra Extra Large</name>
+                </option>
+            </options>
+        </input-field>
+        <input-field type="text">
+            <name>example9</name>
+            <label>Example Field9</label>
+        </input-field>
+        <input-field type="text-editor">
+            <name>example10</name>
+            <label>Example Field10</label>
+        </input-field>
+        <input-field type="textarea">
+            <name>example11</name>
+            <label>Example 1</label>
+        </input-field>
+        <input-field type="price">
+            <name>example12</name>
+            <label>Example Field12</label>
+        </input-field>
+        <input-field type="time">
+            <name>example13</name>
+            <label>Example Field13</label>
+        </input-field>
+        <input-field type="url">
+            <name>example14</name>
+            <label>Example Field14</label>
+        </input-field>
+        <input-field type="password">
+            <name>example15</name>
+            <label>Example Field15</label>
+        </input-field>
+
+        <!-- COMPONENTS -->
+        <component name="sw-entity-single-select">
+            <name>example16</name>
+            <entity>product</entity>
+            <label>Pick a product</label>
+        </component>
+
+        <component name="sw-entity-multi-id-select">
+            <name>example17</name>
+            <entity>product</entity>
+            <label>Select products</label>
+        </component>
+
+        <component name="sw-media-field">
+            <name>example18</name>
+            <label>Upload Media</label>
+        </component>
+
+        <component name="sw-text-editor">
+            <name>example19</name>
+            <label>Some Description HTML</label>
+        </component>
+
+        <component name="sw-snippet-field">
+            <name>example20</name>
+            <label>Snippet</label>
+            <snippet>mcxBasicExample.test.snippet</snippet>
+        </component>
+
+
+    </card>
+</config>

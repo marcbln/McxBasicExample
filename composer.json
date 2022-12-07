@@ -1,0 +1,22 @@
+{
+    "name":        "mcx/basic-example",
+    "description": "My First Plugin",
+    "type":        "shopware-platform-plugin",
+    "license":     "MIT",
+    "autoload":    {
+        "psr-4": {
+            "Mcx\\BasicExample\\": "src/"
+        }
+    },
+    "extra":       {
+        "shopware-plugin-class": "Mcx\\BasicExample\\McxBasicExample",
+        "label":                 {
+            "de-DE": "My First Plugin Title DE",
+            "en-GB": "My First Plugin Title EN"
+        },
+        "description": {
+            "de-DE": "Beschreibung in der Administration für das Plugin",
+            "en-GB": "Description in the administration for this plugin"
+        }
+    }
+}
