@@ -21,10 +21,10 @@ class ProductLoadedListener
 
     public function onProductLoaded(EntityLoadedEvent $entityLoadedEvent)
     {
-        // UtilDebug::dd($entityLoadedEvent->getContext());
 
         $ret = [];
         foreach($entityLoadedEvent->getEntities() as $entity) {
+            // UtilDebug::dd($entity->getVars(), $entityLoadedEvent);
             $ret[] = $entity->getVars()['translated']['name'];
         }
         $this->logger->notice("ProductLoadedListener: products loaded: " . implode(", ", $ret));

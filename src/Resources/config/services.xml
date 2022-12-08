@@ -37,6 +37,10 @@
             </call>
         </service>
 
+        <!-- ENTITY DEFINITION -->
+        <service id="Mcx\BasicExample\Core\Content\Event\EventDefinition">
+            <tag name="shopware.entity.definition" entity="event"/>
+        </service>
 
     </services>
 
