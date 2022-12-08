@@ -10,8 +10,6 @@ use WhyooOs\Util\UtilDebug;
 
 class ProductLoadedListener
 {
-
-
     private LoggerInterface $logger;
 
     public function __construct(LoggerInterface $logger)
@@ -27,6 +25,6 @@ class ProductLoadedListener
             // UtilDebug::dd($entity->getVars(), $entityLoadedEvent);
             $ret[] = $entity->getVars()['translated']['name'];
         }
-        $this->logger->notice("ProductLoadedListener: products loaded: " . implode(", ", $ret));
+        $this->logger->notice("-------- ProductLoadedListener: products loaded: " . implode(", ", $ret));
     }
 }

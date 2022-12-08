@@ -37,6 +37,12 @@
             <tag name="kernel.event_listener" event="product.loaded"/>
         </service>
 
+        <!-- SUBSCRIBER -->
+        <service id="Mcx\BasicExample\Subscriber\ProductEventsSubscriber">
+            <argument type="service" id="logger"></argument>
+            <tag name="kernel.event_subscriber" event="product.loaded"/>
+        </service>
+
         <!-- CONTROLLER -->
         <service id="Mcx\BasicExample\Controller\Storefront\ExampleStoreFrontController" public="true">
             <argument type="service" id="product.repository"/>
