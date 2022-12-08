@@ -39,7 +39,7 @@ class EventDefinition extends EntityDefinition
     {
         return new FieldCollection([
             (new IdField('id', 'id'))->addFlags(new PrimaryKey(), new Required()),
-            new StringField('name', 'name', 255),
+            (new StringField('name', 'name', 255))->addFlags(new Required()),
             new UpdatedAtField(),
             new CreatedAtField(),
         ]);

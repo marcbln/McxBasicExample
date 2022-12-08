@@ -6,7 +6,6 @@ use Shopware\Core\Framework\DataAbstractionLayer\EntityCollection;
 
 /**
  * 12/2022 created
- * @extends EntityCollection<EventEntity>
  */
 class EventCollection extends EntityCollection
 {

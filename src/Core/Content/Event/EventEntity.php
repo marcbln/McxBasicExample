@@ -2,16 +2,18 @@
 
 namespace Mcx\BasicExample\Core\Content\Event;
 
+use Shopware\Core\Framework\DataAbstractionLayer\Entity;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 
 /**
  * 12/2022 created
  */
-class EventEntity
+class EventEntity extends Entity
 {
     use EntityIdTrait;
 
-    private string $name; // eg "product.loaded"
+    // important: do not make it private, otherwise it will not work
+    protected string $name; // eg "product.loaded"
 
     public function getName(): string
     {

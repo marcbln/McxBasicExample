@@ -15,7 +15,8 @@ class MyFirstCommand extends Command
 
     public function configure(): void
     {
-        $this->addOption('info')->addOption('batch-size', 'b', InputOption::VALUE_REQUIRED, 'Number of entities per iteration', '50');
+        $this->addOption('info');
+            $this->addOption('batch-size', 'b', InputOption::VALUE_REQUIRED, 'Number of entities per iteration', '50');
     }
 
     public function run(InputInterface $input, OutputInterface $output): int

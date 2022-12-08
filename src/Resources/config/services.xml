@@ -5,7 +5,29 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
+
+        <!-- COMMANDS -->
         <service id="Mcx\BasicExample\Command\MyFirstCommand">
+            <tag name="console.command"/>
+        </service>
+
+        <service id="Mcx\BasicExample\Command\ListEventCommand">
+            <argument type="service" id="event.repository"></argument>
+            <tag name="console.command"/>
+        </service>
+
+        <service id="Mcx\BasicExample\Command\CreateEventCommand">
+            <argument type="service" id="event.repository"></argument>
+            <tag name="console.command"/>
+        </service>
+
+        <service id="Mcx\BasicExample\Command\UpdateEventCommand">
+            <argument type="service" id="event.repository"></argument>
+            <tag name="console.command"/>
+        </service>
+
+        <service id="Mcx\BasicExample\Command\DeleteEventCommand">
+            <argument type="service" id="event.repository"></argument>
             <tag name="console.command"/>
         </service>
 
