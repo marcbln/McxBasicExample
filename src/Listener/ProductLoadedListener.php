@@ -6,7 +6,6 @@ namespace Mcx\BasicExample\Listener;
 
 use Psr\Log\LoggerInterface;
 use Shopware\Core\Framework\DataAbstractionLayer\Event\EntityLoadedEvent;
-use WhyooOs\Util\UtilDebug;
 
 class ProductLoadedListener
 {

@@ -9,6 +9,8 @@ use Shopware\Core\Content\Product\ProductEntity;
 use Shopware\Core\Content\Product\ProductEvents;
 use Shopware\Core\Framework\DataAbstractionLayer\Event\EntityLoadedEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\HttpKernel\Event\KernelEvent;
+use Symfony\Component\HttpKernel\KernelEvents;
 use WhyooOs\Util\UtilDebug;
 
 class ProductEventsSubscriber implements EventSubscriberInterface
@@ -23,8 +25,8 @@ class ProductEventsSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return [
-            ProductEvents::PRODUCT_LOADED_EVENT => 'onProductsLoaded'
-            // ... TODO.. add more events
+            ProductEvents::PRODUCT_LOADED_EVENT => 'onProductsLoaded',
+            // ...  add more events here ...
         ];
     }
 
