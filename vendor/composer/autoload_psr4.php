@@ -7,5 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Prometheus\\' => array($vendorDir . '/promphp/prometheus_client_php/src/Prometheus'),
+    'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'Mcx\\BasicExample\\' => array($baseDir . '/src'),
 );

@@ -10,6 +10,7 @@ class ComposerStaticInitb57dd6b21dbe9a0ef75ed3246b556256
         'P' => 
         array (
             'Prometheus\\' => 11,
+            'PhpParser\\' => 10,
         ),
         'M' => 
         array (
@@ -21,6 +22,10 @@ class ComposerStaticInitb57dd6b21dbe9a0ef75ed3246b556256
         'Prometheus\\' => 
         array (
             0 => __DIR__ . '/..' . '/promphp/prometheus_client_php/src/Prometheus',
+        ),
+        'PhpParser\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
         'Mcx\\BasicExample\\' => 
         array (

@@ -10,6 +10,7 @@
         <service id="Mcx\BasicExample\Command\MyFirstCommand">
             <argument type="service" id="kernel"/>
             <tag name="console.command"/>
+            <argument type="service" id="?"/>
         </service>
 
         <service id="Mcx\BasicExample\Command\ListEventCommand">
@@ -41,12 +42,12 @@
         <!-- SUBSCRIBER -->
         <service id="Mcx\BasicExample\Subscriber\ProductEventsSubscriber">
             <argument type="service" id="logger"></argument>
-            <tag name="kernel.event_subscriber" event="product.loaded"/>
+            <tag name="kernel.event_subscriber" />
         </service>
 
         <service id="Mcx\BasicExample\Subscriber\KernelEventsSubscriber">
             <argument type="service" id="logger"></argument>
-            <tag name="kernel.event_subscriber" event="product.loaded"/>
+            <tag name="kernel.event_subscriber" />
         </service>
 
         <!-- CONTROLLER -->

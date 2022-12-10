@@ -20,6 +20,7 @@
         }
     },
     "require": {
-        "promphp/prometheus_client_php": "^2.6"
+        "promphp/prometheus_client_php": "^2.6",
+        "nikic/php-parser": "^4.15"
     }
 }
