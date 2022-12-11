@@ -10,7 +10,6 @@
         <service id="Mcx\BasicExample\Command\MyFirstCommand">
             <argument type="service" id="kernel"/>
             <tag name="console.command"/>
-            <argument type="service" id="?"/>
         </service>
 
         <service id="Mcx\BasicExample\Command\ListEventCommand">

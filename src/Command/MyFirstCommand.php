@@ -5,15 +5,13 @@ declare(strict_types=1);
 namespace Mcx\BasicExample\Command;
 
 use Exception;
+use Mcx\BasicExample\Util\MyNodeVisitor;
 use Mcx\BasicExample\Util\UtilCmd;
 use PhpParser\Error;
-use PhpParser\Node;
-use PhpParser\Node\Stmt\ClassConst;
 use PhpParser\NodeDumper;
 use PhpParser\NodeTraverser;
-use PhpParser\NodeVisitorAbstract;
 use PhpParser\ParserFactory;
-use Shopware\Core\Checkout\Order\Event\OrderPaymentMethodChangedEvent;
+use Shopware\Core\Framework\Adapter\Console\ShopwareStyle;
 use Shopware\Core\Kernel;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -23,44 +21,6 @@ use WhyooOs\Util\Arr\UtilStringArray;
 use WhyooOs\Util\UtilDebug;
 
 
-class MyVisitor extends NodeVisitorAbstract
-{
-    public array $found = [];
-    public string $currentFile;
-
-    public function enterNode(Node $node)
-    {
-        if ($node instanceof ClassConst) {
-            $constDocBlock = $node->getDocComment()->getText();
-            $constName = $node->consts[0]->name->name;
-
-
-            $constValue = $node->consts[0]->value->getAttribute('rawValue');
-            if(empty($constValue)) {
-                // example: public const ORDER_PAYMENT_METHOD_CHANGED = OrderPaymentMethodChangedEvent::EVENT_NAME;
-                // $constValue = $
-               //  UtilDebug::dd($node->consts[0]->value);
-            }
-
-            $this->found[] = [
-                'constDocBlock' => $constDocBlock,
-                'constName'     => $constName,
-                'constValue'    => $constValue,
-                'file'          => $this->currentFile,
-            ];
-//            @$GLOBALS['FFF'][$constName] ++;
-//            @$GLOBALS['VVV'][$constValue] ++;
-//            @$GLOBALS['DDD'][$constDocBlock] ++;
-            if(empty($constValue)) {
-                if( $node->consts[0]->value instanceof \PhpParser\Node\Expr\ClassConstFetch) {
-                    UtilDebug::dd($this->found, $node);
-                }
-            }
-        }
-    }
-}
-
-
 class MyFirstCommand extends Command
 {
 
@@ -68,6 +28,7 @@ class MyFirstCommand extends Command
     protected static $defaultName = 'mcx:basic-example:my-first-command';
 
     private Kernel $kernel; // used for getting project dir
+    private ShopwareStyle $io;
 
     public function __construct(Kernel $kernel, string $name = null)
     {
@@ -84,22 +45,25 @@ class MyFirstCommand extends Command
 
     public function run(InputInterface $input, OutputInterface $output): int
     {
+        $this->io = new ShopwareStyle($input, $output);
+
         $files = $this->_findAllFilesWithEvents([__FILE__]);
-        $dumper = new NodeDumper;
         $traverser = new NodeTraverser();
-        $myVisitor = new MyVisitor();
+        $myVisitor = new MyNodeVisitor();
         $traverser->addVisitor($myVisitor);
 
         foreach ($files as $pathFile) {
-            echo "\n\n\n=====================================\n$pathFile\n=====================================\n\n\n";
+            $this->io->info("==== $pathFile");
+
             $ast = $this->_parseFile($pathFile);
 
-            $myVisitor->currentFile = $pathFile;
+            $myVisitor->reset($pathFile);
             $traverser->traverse($ast);
+            UtilDebug::d($myVisitor);
         }
 
-        UtilDebug::dd($myVisitor->found, $GLOBALS['FFF'], $GLOBALS['DDD'], $GLOBALS['VVV']);
-        UtilDebug::dd("sdjfjkhsdjkfjksdhjahfkjhkjfasdhfjk");
+//        UtilDebug::dd($myVisitor->found, $GLOBALS['FFF'], $GLOBALS['DDD'], $GLOBALS['VVV']);
+//        UtilDebug::dd("sdjfjkhsdjkfjksdhjahfkjhkjfasdhfjk");
 
         return Command::SUCCESS;
     }
