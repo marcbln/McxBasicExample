@@ -59,11 +59,10 @@ class MyFirstCommand extends Command
 
             $myVisitor->reset($pathFile);
             $traverser->traverse($ast);
-            UtilDebug::d($myVisitor);
+            // UtilDebug::d($myVisitor);
         }
 
-//        UtilDebug::dd($myVisitor->found, $GLOBALS['FFF'], $GLOBALS['DDD'], $GLOBALS['VVV']);
-//        UtilDebug::dd("sdjfjkhsdjkfjksdhjahfkjhkjfasdhfjk");
+        UtilDebug::dd($myVisitor->found);
 
         return Command::SUCCESS;
     }
