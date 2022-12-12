@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Mcx\BasicExample\Command;
 
-use Mcx\BasicExample\Core\Content\Event\EventEntity;
+use Mcx\BasicExample\Core\Content\EventLog\EventLogEntity;
 use Shopware\Core\Framework\Context;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -13,9 +13,9 @@ use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class ListEventCommand extends Command
+class ListEventLogCommand extends Command
 {
-    protected static $defaultName = 'mcx:event:list';
+    protected static $defaultName = 'mcx:event-log:list';
     protected EntityRepository $eventRepository;
 
     public function __construct(EntityRepository $eventRepository, string $name = null)
@@ -30,7 +30,7 @@ class ListEventCommand extends Command
         $searchResult = $this->eventRepository->search(new Criteria(), Context::createDefaultContext());
         $table = new Table($output);
         $table->setHeaders(['id', 'name', 'created', 'updated']);
-        /** @var EventEntity $row */
+        /** @var EventLogEntity $row */
         foreach ($searchResult->getEntities() as $row) {
             $table->addRow([
                 $row->getId(),

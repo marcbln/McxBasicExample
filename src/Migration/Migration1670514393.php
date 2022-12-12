@@ -9,14 +9,14 @@ class Migration1670514393 extends MigrationStep
 {
     public function getCreationTimestamp(): int
     {
-        return 1670514393;
+        return 1670514395;
     }
 
     public function update(Connection $connection): void
     {
         // implement update
         $sql = "
-        CREATE TABLE IF NOT EXISTS `event` (
+        CREATE TABLE IF NOT EXISTS `event_log` (
             `id`                    BINARY(16)   NOT NULL,
             `name`                  VARCHAR(255) NOT NULL,
             `created_at`            DATETIME(3)  NOT NULL,

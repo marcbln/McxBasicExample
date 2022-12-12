@@ -8,27 +8,26 @@
 
         <!-- COMMANDS -->
         <service id="Mcx\BasicExample\Command\MyFirstCommand">
-            <argument type="service" id="kernel"/>
             <tag name="console.command"/>
         </service>
 
-        <service id="Mcx\BasicExample\Command\ListEventCommand">
-            <argument type="service" id="event.repository"></argument>
+        <service id="Mcx\BasicExample\Command\ListEventLogCommand">
+            <argument type="service" id="event_log.repository"></argument>
             <tag name="console.command"/>
         </service>
 
-        <service id="Mcx\BasicExample\Command\CreateEventCommand">
-            <argument type="service" id="event.repository"></argument>
+        <service id="Mcx\BasicExample\Command\CreateEventLogCommand">
+            <argument type="service" id="event_log.repository"></argument>
             <tag name="console.command"/>
         </service>
 
-        <service id="Mcx\BasicExample\Command\UpdateEventCommand">
-            <argument type="service" id="event.repository"></argument>
+        <service id="Mcx\BasicExample\Command\UpdateEventLogCommand">
+            <argument type="service" id="event_log.repository"></argument>
             <tag name="console.command"/>
         </service>
 
-        <service id="Mcx\BasicExample\Command\DeleteEventCommand">
-            <argument type="service" id="event.repository"></argument>
+        <service id="Mcx\BasicExample\Command\DeleteEventLogCommand">
+            <argument type="service" id="event_log.repository"></argument>
             <tag name="console.command"/>
         </service>
 
@@ -72,8 +71,8 @@
         </service>
 
         <!-- ENTITY DEFINITION -->
-        <service id="Mcx\BasicExample\Core\Content\Event\EventDefinition">
-            <tag name="shopware.entity.definition" entity="event"/>
+        <service id="Mcx\BasicExample\Core\Content\EventLog\EventLogDefinition">
+            <tag name="shopware.entity.definition" entity="event_log"/>
         </service>
 
     </services>

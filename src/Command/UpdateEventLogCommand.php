@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Mcx\BasicExample\Command;
 
-use Mcx\BasicExample\Core\Content\Event\EventEntity;
+use Mcx\BasicExample\Core\Content\EventLog\EventLogEntity;
 use Shopware\Core\Framework\Adapter\Console\ShopwareStyle;
 use Shopware\Core\Framework\Context;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -17,9 +17,9 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use WhyooOs\Util\UtilDebug;
 
-class UpdateEventCommand extends Command
+class UpdateEventLogCommand extends Command
 {
-    protected static $defaultName = 'mcx:event:update';
+    protected static $defaultName = 'mcx:event-log:update';
     protected EntityRepository $eventRepository;
 
     public function __construct(EntityRepository $eventRepository, string $name = null)

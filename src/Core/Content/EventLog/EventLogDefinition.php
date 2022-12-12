@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Mcx\BasicExample\Core\Content\Event;
+namespace Mcx\BasicExample\Core\Content\EventLog;
 
 use Shopware\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityIdTrait;
@@ -15,10 +15,10 @@ use Shopware\Core\Framework\DataAbstractionLayer\FieldCollection;
 /**
  * 12/2022 created
  */
-class EventDefinition extends EntityDefinition
+class EventLogDefinition extends EntityDefinition
 {
 
-    public const ENTITY_NAME = 'event';
+    public const ENTITY_NAME = 'event_log';
 
     public function getEntityName(): string
     {
@@ -27,12 +27,12 @@ class EventDefinition extends EntityDefinition
 
     public function getEntityClass(): string
     {
-        return EventEntity::class;
+        return EventLogEntity::class;
     }
 
     public function getCollectionClass(): string
     {
-        return EventCollection::class;
+        return EventLogCollection::class;
     }
 
     protected function defineFields(): FieldCollection

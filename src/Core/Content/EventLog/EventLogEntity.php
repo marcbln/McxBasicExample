@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Mcx\BasicExample\Core\Content\Event;
+namespace Mcx\BasicExample\Core\Content\EventLog;
 
 use Shopware\Core\Framework\DataAbstractionLayer\Entity;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityIdTrait;
@@ -8,11 +8,11 @@ use Shopware\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 /**
  * 12/2022 created
  */
-class EventEntity extends Entity
+class EventLogEntity extends Entity
 {
     use EntityIdTrait;
 
-    // important: do not make it private, otherwise it will not work
+    // important: do NOT make it private, otherwise it will not work
     protected string $name; // eg "product.loaded"
 
     public function getName(): string
