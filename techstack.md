@@ -3,11 +3,11 @@
 ## Tech Stack
 marcbln/McxBasicExample is built on the following main stack:
 
-- [PHP](http://www.php.net/) – Languages
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – Languages
-- [PHPUnit](https://phpunit.de/) – Testing Frameworks
+- [PHP](http://www.php.net/) – Languages
 - [Guzzle](http://guzzlephp.org/) – Microframeworks (Backend)
 - [PHPStan](https://github.com/phpstan/phpstan) – Code Review
+- [PHPUnit](https://phpunit.de/) – Testing Frameworks
 
 Full tech stack [here](/techstack.md)
 
@@ -17,11 +17,11 @@ Full tech stack [here](/techstack.md)
 ## Tech Stack
 marcbln/McxBasicExample is built on the following main stack:
 
-- <img width='25' height='25' src='https://img.stackshare.io/service/991/hwUcGZ41_400x400.jpg' alt='PHP'/> [PHP](http://www.php.net/) – Languages
 - <img width='25' height='25' src='https://img.stackshare.io/service/1209/javascript.jpeg' alt='JavaScript'/> [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – Languages
-- <img width='25' height='25' src='https://img.stackshare.io/service/1616/1_WsEnddd5Y4EgEHsT054kUQ.jpeg' alt='PHPUnit'/> [PHPUnit](https://phpunit.de/) – Testing Frameworks
+- <img width='25' height='25' src='https://img.stackshare.io/service/991/hwUcGZ41_400x400.jpg' alt='PHP'/> [PHP](http://www.php.net/) – Languages
 - <img width='25' height='25' src='https://img.stackshare.io/service/2350/638632.png' alt='Guzzle'/> [Guzzle](http://guzzlephp.org/) – Microframeworks (Backend)
 - <img width='25' height='25' src='https://img.stackshare.io/service/8333/phpst.png' alt='PHPStan'/> [PHPStan](https://github.com/phpstan/phpstan) – Code Review
+- <img width='25' height='25' src='https://img.stackshare.io/service/1616/1_WsEnddd5Y4EgEHsT054kUQ.jpeg' alt='PHPUnit'/> [PHPUnit](https://phpunit.de/) – Testing Frameworks
 
 Full tech stack [here](/techstack.md)
 
@@ -32,7 +32,7 @@ Full tech stack [here](/techstack.md)
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [marcbln/McxBasicExample](https://github.com/marcbln/McxBasicExample)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|6<br/>Tools used|01/05/24 <br/>Report generated|
+|6<br/>Tools used|02/29/24 <br/>Report generated|
 |------|------|
 </div>
 
